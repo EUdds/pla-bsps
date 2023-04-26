@@ -48,7 +48,7 @@ STACK_SIZE = 0x1000;
 * https://github.com/cypresssemiconductorco/psoc6cm0p
 */
 /* The size of the Cortex-M0+ application image at the start of FLASH */
-FLASH_CM0P_SIZE  = 0x2000;
+FLASH_CM0P_SIZE  = 0x20000;
 
 /* Force symbol to be entered in the output file as an undefined symbol. Doing
 * this may, for example, trigger linking of additional modules from standard

@@ -4,13 +4,11 @@
 * Description:
 * Simple wrapper header containing all generated files.
 * This file was automatically generated and should not be modified.
-* Tools Package 2.4.0.5972
-* mtb-pdl-cat1 2.4.0.13881
-* personalities 6.0.0.0
-* udd 3.0.0.1974
+* Configurator Backend 3.0.0
+* mtb-pdl-cat1 2.4.1.17937
 *
 ********************************************************************************
-* Copyright 2022 Cypress Semiconductor Corporation (an Infineon company) or
+* Copyright 2023 Cypress Semiconductor Corporation (an Infineon company) or
 * an affiliate of Cypress Semiconductor Corporation.
 * SPDX-License-Identifier: Apache-2.0
 *
@@ -36,11 +34,15 @@ extern "C" {
 
 #include "cycfg_notices.h"
 #include "cycfg_system.h"
+#include "cycfg_clocks.h"
+#include "cycfg_dmas.h"
 #include "cycfg_routing.h"
 #include "cycfg_peripherals.h"
 #include "cycfg_pins.h"
 
 void init_cycfg_all(void);
+void cycfg_config_init(void);
+void cycfg_config_reservations(void);
 
 
 #if defined(__cplusplus)

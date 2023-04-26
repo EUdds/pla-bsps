@@ -4,13 +4,11 @@
 * Description:
 * System configuration
 * This file was automatically generated and should not be modified.
-* Tools Package 2.4.0.5972
-* mtb-pdl-cat1 2.4.0.13881
-* personalities 6.0.0.0
-* udd 3.0.0.1974
+* Configurator Backend 3.0.0
+* mtb-pdl-cat1 2.4.1.17937
 *
 ********************************************************************************
-* Copyright 2022 Cypress Semiconductor Corporation (an Infineon company) or
+* Copyright 2023 Cypress Semiconductor Corporation (an Infineon company) or
 * an affiliate of Cypress Semiconductor Corporation.
 * SPDX-License-Identifier: Apache-2.0
 *
@@ -124,32 +122,24 @@
         .block_num = 0U,
         .channel_num = 0U,
     };
-#endif //defined (CY_USING_HAL)
-#if defined (CY_USING_HAL)
     const cyhal_resource_inst_t srss_0_clock_0_pathmux_1_obj = 
     {
         .type = CYHAL_RSC_CLKPATH,
         .block_num = 1U,
         .channel_num = 0U,
     };
-#endif //defined (CY_USING_HAL)
-#if defined (CY_USING_HAL)
     const cyhal_resource_inst_t srss_0_clock_0_pathmux_2_obj = 
     {
         .type = CYHAL_RSC_CLKPATH,
         .block_num = 2U,
         .channel_num = 0U,
     };
-#endif //defined (CY_USING_HAL)
-#if defined (CY_USING_HAL)
     const cyhal_resource_inst_t srss_0_clock_0_pathmux_3_obj = 
     {
         .type = CYHAL_RSC_CLKPATH,
         .block_num = 3U,
         .channel_num = 0U,
     };
-#endif //defined (CY_USING_HAL)
-#if defined (CY_USING_HAL)
     const cyhal_resource_inst_t srss_0_clock_0_pathmux_4_obj = 
     {
         .type = CYHAL_RSC_CLKPATH,
@@ -650,14 +640,10 @@ __WEAK void __NO_RETURN cycfg_ClockStartupError(uint32_t error)
     {
         Cy_SysClk_ClkBakSetSource(CY_SYSCLK_BAK_IN_WCO);
     }
-#endif //(!defined(CY_DEVICE_SECURE))
-#if (!defined(CY_DEVICE_SECURE))
     __STATIC_INLINE void Cy_SysClk_ClkFastInit()
     {
         Cy_SysClk_ClkFastSetDivider(0U);
     }
-#endif //(!defined(CY_DEVICE_SECURE))
-#if (!defined(CY_DEVICE_SECURE))
     __STATIC_INLINE void Cy_SysClk_FllInit()
     {
         if (CY_SYSCLK_SUCCESS != Cy_SysClk_FllManualConfigure(&srss_0_clock_0_fll_0_fllConfig))
@@ -669,66 +655,46 @@ __WEAK void __NO_RETURN cycfg_ClockStartupError(uint32_t error)
             cycfg_ClockStartupError(CY_CFG_SYSCLK_FLL_ERROR);
         }
     }
-#endif //(!defined(CY_DEVICE_SECURE))
-#if (!defined(CY_DEVICE_SECURE))
     __STATIC_INLINE void Cy_SysClk_ClkHf0Init()
     {
         Cy_SysClk_ClkHfSetSource(0U, CY_CFG_SYSCLK_CLKHF0_CLKPATH);
         Cy_SysClk_ClkHfSetDivider(0U, CY_SYSCLK_CLKHF_NO_DIVIDE);
     }
-#endif //(!defined(CY_DEVICE_SECURE))
-#if (!defined(CY_DEVICE_SECURE))
     __STATIC_INLINE void Cy_SysClk_IloInit()
     {
         /* The WDT is unlocked in the default startup code */
         Cy_SysClk_IloEnable();
         Cy_SysClk_IloHibernateOn(true);
     }
-#endif //(!defined(CY_DEVICE_SECURE))
-#if (!defined(CY_DEVICE_SECURE))
     __STATIC_INLINE void Cy_SysClk_ClkLfInit()
     {
         /* The WDT is unlocked in the default startup code */
         Cy_SysClk_ClkLfSetSource(CY_SYSCLK_CLKLF_IN_WCO);
     }
-#endif //(!defined(CY_DEVICE_SECURE))
-#if (!defined(CY_DEVICE_SECURE))
     __STATIC_INLINE void Cy_SysClk_ClkPath0Init()
     {
         Cy_SysClk_ClkPathSetSource(0U, CY_CFG_SYSCLK_CLKPATH0_SOURCE);
     }
-#endif //(!defined(CY_DEVICE_SECURE))
-#if (!defined(CY_DEVICE_SECURE))
     __STATIC_INLINE void Cy_SysClk_ClkPath1Init()
     {
         Cy_SysClk_ClkPathSetSource(1U, CY_CFG_SYSCLK_CLKPATH1_SOURCE);
     }
-#endif //(!defined(CY_DEVICE_SECURE))
-#if (!defined(CY_DEVICE_SECURE))
     __STATIC_INLINE void Cy_SysClk_ClkPath2Init()
     {
         Cy_SysClk_ClkPathSetSource(2U, CY_CFG_SYSCLK_CLKPATH2_SOURCE);
     }
-#endif //(!defined(CY_DEVICE_SECURE))
-#if (!defined(CY_DEVICE_SECURE))
     __STATIC_INLINE void Cy_SysClk_ClkPath3Init()
     {
         Cy_SysClk_ClkPathSetSource(3U, CY_CFG_SYSCLK_CLKPATH3_SOURCE);
     }
-#endif //(!defined(CY_DEVICE_SECURE))
-#if (!defined(CY_DEVICE_SECURE))
     __STATIC_INLINE void Cy_SysClk_ClkPath4Init()
     {
         Cy_SysClk_ClkPathSetSource(4U, CY_CFG_SYSCLK_CLKPATH4_SOURCE);
     }
-#endif //(!defined(CY_DEVICE_SECURE))
-#if (!defined(CY_DEVICE_SECURE))
     __STATIC_INLINE void Cy_SysClk_ClkPeriInit()
     {
         Cy_SysClk_ClkPeriSetDivider(0U);
     }
-#endif //(!defined(CY_DEVICE_SECURE))
-#if (!defined(CY_DEVICE_SECURE))
     __STATIC_INLINE void Cy_SysClk_Pll0Init()
     {
         if (CY_SYSCLK_SUCCESS != Cy_SysClk_PllManualConfigure(1U, &srss_0_clock_0_pll_0_pllConfig))
@@ -740,14 +706,10 @@ __WEAK void __NO_RETURN cycfg_ClockStartupError(uint32_t error)
             cycfg_ClockStartupError(CY_CFG_SYSCLK_PLL_ERROR);
         }
     }
-#endif //(!defined(CY_DEVICE_SECURE))
-#if (!defined(CY_DEVICE_SECURE))
     __STATIC_INLINE void Cy_SysClk_ClkSlowInit()
     {
         Cy_SysClk_ClkSlowSetDivider(0U);
     }
-#endif //(!defined(CY_DEVICE_SECURE))
-#if (!defined(CY_DEVICE_SECURE))
     __STATIC_INLINE void Cy_SysClk_WcoInit()
     {
         (void)Cy_GPIO_Pin_FastInit(GPIO_PRT0, 0U, 0x00U, 0x00U, HSIOM_SEL_GPIO);
@@ -757,16 +719,27 @@ __WEAK void __NO_RETURN cycfg_ClockStartupError(uint32_t error)
             cycfg_ClockStartupError(CY_CFG_SYSCLK_WCO_ERROR);
         }
     }
-#endif //(!defined(CY_DEVICE_SECURE))
-#if (!defined(CY_DEVICE_SECURE))
     __STATIC_INLINE void init_cycfg_power(void)
     {
         /* Reset the Backup domain on POR, XRES, BOD only if Backup domain is supplied by VDDD */
-        #if (CY_CFG_PWR_VBACKUP_USING_VDDD)
-            #ifdef CY_CFG_SYSCLK_ILO_ENABLED
-                if (0u == Cy_SysLib_GetResetReason() /* POR, XRES, or BOD */)
-                {
-                    Cy_SysLib_ResetBackupDomain();
+         #if (CY_CFG_PWR_VBACKUP_USING_VDDD)
+             #ifdef CY_CFG_SYSCLK_ILO_ENABLED
+                 if (0u == Cy_SysLib_GetResetReason() /* POR, XRES, or BOD */)
+                 {
+                 #if CY_CFG_SYSCLK_WCO_ENABLED
+                     uint32_t wcoTrim = Cy_SysLib_GetWcoTrim();
+                     if (CY_SYSLIB_SUCCESS != Cy_SysLib_ResetBackupDomain())
+                     {
+                         Cy_SysLib_DelayUs(1U);
+                         if (CY_SYSLIB_SUCCESS != Cy_SysLib_GetResetStatus())
+                         {
+                             cycfg_ClockStartupError(CY_CFG_PWR_BKP_ERROR);
+                         }
+                     }
+                     Cy_SysLib_SetWcoTrim(wcoTrim);
+                 #else /* CY_CFG_SYSCLK_WCO_ENABLED */
+                     (void) Cy_SysLib_ResetBackupDomain();
+                 #endif /* CY_CFG_SYSCLK_WCO_ENABLED */
                     Cy_SysClk_IloDisable();
                     Cy_SysClk_IloInit();
                 }
@@ -829,7 +802,6 @@ void init_cycfg_system(void)
         {
             cycfg_ClockStartupError(configStatus);
         }
-
         #ifdef CY_CFG_SYSCLK_EXTCLK_FREQ
             Cy_SysClk_ExtClkSetFrequency(CY_CFG_SYSCLK_EXTCLK_FREQ);
         #endif /* CY_CFG_SYSCLK_EXTCLK_FREQ */
@@ -884,10 +856,8 @@ void init_cycfg_system(void)
         #endif
     
         #if (defined(CY_IP_M4CPUSS) && CY_CFG_SYSCLK_ALTHF_ENABLED)
-
             Cy_SysClk_AltHfInit();
         #endif /* (defined(CY_IP_M4CPUSS) && CY_CFG_SYSCLK_ALTHF_ENABLED */
-
     
         #ifdef CY_CFG_SYSCLK_ECO_ENABLED
             Cy_SysClk_EcoInit();
@@ -1134,24 +1104,15 @@ void init_cycfg_system(void)
     
     #endif /* (!defined(CY_DEVICE_SECURE)) */
     
+}
 
+void reserve_cycfg_system(void)
+{
 #if defined (CY_USING_HAL)
     cyhal_hwmgr_reserve(&srss_0_clock_0_pathmux_0_obj);
-#endif //defined (CY_USING_HAL)
-
-#if defined (CY_USING_HAL)
     cyhal_hwmgr_reserve(&srss_0_clock_0_pathmux_1_obj);
-#endif //defined (CY_USING_HAL)
-
-#if defined (CY_USING_HAL)
     cyhal_hwmgr_reserve(&srss_0_clock_0_pathmux_2_obj);
-#endif //defined (CY_USING_HAL)
-
-#if defined (CY_USING_HAL)
     cyhal_hwmgr_reserve(&srss_0_clock_0_pathmux_3_obj);
-#endif //defined (CY_USING_HAL)
-
-#if defined (CY_USING_HAL)
     cyhal_hwmgr_reserve(&srss_0_clock_0_pathmux_4_obj);
 #endif //defined (CY_USING_HAL)
 }

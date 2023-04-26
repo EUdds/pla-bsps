@@ -5,13 +5,11 @@
 * Contains warnings and errors that occurred while generating code for the
 * design.
 * This file was automatically generated and should not be modified.
-* Tools Package 2.4.0.5972
-* mtb-pdl-cat1 2.4.0.13881
-* personalities 6.0.0.0
-* udd 3.0.0.1974
+* Configurator Backend 3.0.0
+* mtb-pdl-cat1 2.4.1.17937
 *
 ********************************************************************************
-* Copyright 2022 Cypress Semiconductor Corporation (an Infineon company) or
+* Copyright 2023 Cypress Semiconductor Corporation (an Infineon company) or
 * an affiliate of Cypress Semiconductor Corporation.
 * SPDX-License-Identifier: Apache-2.0
 *
@@ -33,7 +31,13 @@
 
 #ifdef CY_SUPPORTS_DEVICE_VALIDATION
 #ifndef CYBLE_416045_02
-    #error "Unexpected target MCU; expected CYBLE-416045-02. There may be an inconsistency between the *.modus file and the makefile target configuration device sets."
+    #error "Unexpected MPN; expected DEVICE:=CYBLE-416045-02. There may be an inconsistency between the *.modus file and the makefile target configuration device sets."
+#endif
+#endif
+
+#ifdef CY_SUPPORTS_COMPLETE_DEVICE_VALIDATION
+#ifndef CYBLE_416045_02
+    #error "Unexpected MPN; expected DEVICE:=CYBLE-416045-02. There may be an inconsistency between the *.modus file and the makefile target configuration device sets."
 #endif
 #endif
 

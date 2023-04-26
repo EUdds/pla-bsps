@@ -1,8 +1,8 @@
 /*******************************************************************************
-* File Name: cycfg.timestamp
+* File Name: cycfg_clocks.h
 *
 * Description:
-* Sentinel file for determining if generated source is up to date.
+* Clock configuration
 * This file was automatically generated and should not be modified.
 * Configurator Backend 3.0.0
 * mtb-pdl-cat1 2.4.1.17937
@@ -25,3 +25,41 @@
 * limitations under the License.
 ********************************************************************************/
 
+#if !defined(CYCFG_CLOCKS_H)
+#define CYCFG_CLOCKS_H
+
+#include "cycfg_notices.h"
+#include "cy_sysclk.h"
+#if defined (CY_USING_HAL)
+    #include "cyhal_hwmgr.h"
+#endif //defined (CY_USING_HAL)
+
+#if defined(__cplusplus)
+extern "C" {
+#endif
+
+#define FRAM_SPI_CLK_ENABLED 1U
+#define FRAM_SPI_CLK_HW CY_SYSCLK_DIV_8_BIT
+#define FRAM_SPI_CLK_NUM 0U
+#define ADC_POT_SPI_CLK_ENABLED 1U
+#define ADC_POT_SPI_CLK_HW CY_SYSCLK_DIV_8_BIT
+#define ADC_POT_SPI_CLK_NUM 1U
+#define LOGIC_ANALYZER_CLK_ENABLED 1U
+#define LOGIC_ANALYZER_CLK_HW CY_SYSCLK_DIV_8_BIT
+#define LOGIC_ANALYZER_CLK_NUM 2U
+
+#if defined (CY_USING_HAL)
+    extern const cyhal_resource_inst_t FRAM_SPI_CLK_obj;
+    extern const cyhal_resource_inst_t ADC_POT_SPI_CLK_obj;
+    extern const cyhal_resource_inst_t LOGIC_ANALYZER_CLK_obj;
+#endif //defined (CY_USING_HAL)
+
+void init_cycfg_clocks(void);
+void reserve_cycfg_clocks(void);
+
+#if defined(__cplusplus)
+}
+#endif
+
+
+#endif /* CYCFG_CLOCKS_H */
